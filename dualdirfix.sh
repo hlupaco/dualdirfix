@@ -6,7 +6,7 @@
 for i in $(seq 1 100) ; do
   echo
   echo "Round [$i]"
-  for dir in $(find . -maxdepth "${i}" -type d | grep /([a-zA-Z_0-9.-][a-zA-Z_0-9.-]*/)1/* \
+  for dir in $(find . -maxdepth "${i}" -type d | grep '/\([a-zA-Z_0-9\.-][a-zA-Z_0-9\.-]*/\)\1/*' \
                  | sort -u) ; do
     dir=$(echo $dir | rev | cut -d/ -f2- | rev)
     echo
